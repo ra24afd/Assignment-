@@ -1,0 +1,24 @@
+Group A116 (Radha,Akshara,Vamsi,Rizwana,Yash)
+
+Dataset - matches.csv
+
+R_file - matches.R
+
+URL : https://www.kaggle.com/datasets/manasgarg/ipl
+
+Our dataset is about Indian cricket IPL matches 
+
+****used this to read the csv file what we have and columns that we have in the dataset ****
+
+library(readr)
+library(readxl)
+df <- read.csv("matches.csv", header = TRUE)
+print(colnames(df))
+
+Output : (Total 18 columns) rows (636)
+"id"   "season"  "city" "date" "team1" "team2" "toss_winner" "toss_decision"  
+"result"   "dl_applied" "winner"  "win_by_runs" "win_by_wickets" "player_of_match" "venue" "umpire1"        
+"umpire2"  "umpire3"  
+
+
+
