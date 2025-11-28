@@ -1,0 +1,18 @@
+Research question we have chosen : Is there a difference in the proportion of matches won between toss-winning teams that choose to bat and toss-winning teams that choose to field?
+
+Independent variable: toss_decision (bat / field) 
+Variable datatype : Nominal (because there is no order for this outcome)
+
+Dependent variable: toss_result_match (win/loss)
+Variable datatype : Nominal (because there is no order for this outcome)
+
+Null hypothesis (H₀) :There is no difference in the proportion of matches won between teams that win the toss and teams that lose the toss in the IPL.
+
+Alternative hypothesis (H₁) : There is a difference in the proportion of matches won between teams that win the toss and teams that lose the toss in the IPL.
+
+*****What we understood and why we chosen this *****
+
+We chose this research question because the toss is one of the most important decisions in an IPL match, and teams often believe that choosing to bat or field gives them an advantage. 
+By analysing real match data, we wanted to see whether this belief is actually true. 
+This makes the question interesting, practical, and easy to investigate using statistics because both the toss decision and the match result are clear, categorical variables. 
+It also helps us understand whether strategy after winning the toss really affects the final outcome of the match.
