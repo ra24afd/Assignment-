@@ -1,0 +1,74 @@
+*****Added R code to generate contingency table for toss winner vs match winner*****
+
+df$toss_result_match <- ifelse(df$toss_winner == df$winner, "Won Match", "Lost Match")
+table(df$toss_result_match)
+
+Output : 
+
+Lost Match  Won Match 
+       308        325 
+
+*****Added contingency table comparing toss decision vs toss-winning team match result*****
+table_decision <- table(df$toss_result_match, df$toss_decision)
+table_decision
+
+Output:
+             bat field
+  Lost Match 148   160
+  Won Match  124   201
+
+
+***** Performed chi-square test *****
+
+chisq_result <- chisq.test(table_decision)
+chisq_result
+
+Output:
+Pearson's Chi-squared test with Yates' continuity correction
+
+data:  table_decision
+X-squared = 5.9247, df = 1, p-value = 0.01493
+
+Because the p-value is 0.01493—which is well below the 0.05 threshold—we reject the null hypothesis. 
+This means the toss decision (bat or field) has a statistically significant effect on whether the toss-winning team wins the match.
+
+
+*****Added percentage calculation for toss decision comparison using prop.table() to prepare data for stacked barplot*****
+
+#we have taken margin=2 we are comparing the columns(This matches the structure of our research question, which compares winning proportions between “bat” and “field” decisions.)
+
+percentages <- prop.table(table_decision, margin = 2) * 100
+percentages
+
+Output:
+
+                  bat    field
+  Lost Match 54.41176 44.32133
+  Won Match  45.58824 55.67867
+
+*****Created stacked barplot showing percentage of matches won/lost for toss-winning teams based on their toss decision (bat or field)*****
+barplot(
+  percentages,
+  col = c("blue", "pink"),    # two colours for Won/Lost
+  xlab = "Toss Decision",
+  ylab = "Percentage of Matches",
+  main = "Stacked Bar of Match Result by Toss Decision",
+  ylim = c(0, 100),
+  legend.text = rownames(percentages),
+  args.legend = list(x = "topright")
+)
+text(
+  x = bp, 
+  y = percentages[1,] / 2, 
+  labels = paste0(round(percentages[1,], 1), "%"), 
+  col = "white", cex = 0.9
+)
+
+text(
+  x = bp, 
+  y = percentages[1,] + percentages[2,] / 2, 
+  labels = paste0(round(percentages[2,], 1), "%"), 
+  col = "black", cex = 0.9
+)
+
+
