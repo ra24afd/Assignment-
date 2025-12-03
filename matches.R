@@ -28,7 +28,7 @@ percentages
 #Create a stacked barplot to compare the percentage of matches won and lost 
 #for toss-winning teams by their toss decision (bat or field)
 
-barplot(
+bp <- barplot(
   percentages,
   col = c("blue", "pink"),    # two colours for Won/Lost
   xlab = "Coin Toss Win Decision",
@@ -38,4 +38,16 @@ barplot(
   legend.text = rownames(percentages),
   args.legend = list(x = "topright")
 )
+text(
+  x = bp, 
+  y = percentages[1,] / 2, 
+  labels = paste0(round(percentages[1,], 1), "%"), 
+  col = "white", cex = 0.9
+)
 
+text(
+  x = bp, 
+  y = percentages[1,] + percentages[2,] / 2, 
+  labels = paste0(round(percentages[2,], 1), "%"), 
+  col = "black", cex = 0.9
+)
