@@ -1,0 +1,51 @@
+Chi-squared test of independence: toss_result_match vs toss_decision
+
+1. Aim of the analysis
+
+The goal of this analysis was to test whether there is a statistical association between:
+
+toss_result_match – whether the team that won the toss went on to win or lose the match
+
+toss_decision – the decision made after winning the toss (e.g. bat vs field)
+
+In other words, we wanted to know:
+
+Does the toss decision (bat/field) have a relationship with the final match outcome for the team that won the toss, or are these two variables independent?
+
+
+2. Data and contingency table
+
+First, we created a contingency table using the two categorical variables:
+
+table_decision <- table(df$toss_result_match, df$toss_decision)
+table_decision
+
+
+Each cell in table_decision counts how many matches fall into a given combination of:
+
+row = outcome (toss_result_match)
+
+column = toss decision (toss_decision)
+
+Because both variables have two categories, this results in a 2×2 contingency table, which is a standard setting for applying a chi-squared test of independence.
+
+
+3. Results and interpretation
+
+From the output:
+
+Test statistic: X² = 5.7825
+
+Degrees of freedom: df = 1 (because this is a 2×2 table)
+
+p-value = 0.01619
+
+Using a conventional significance level of α = 0.05:
+
+Because p = 0.01619 < 0.05, we reject the null hypothesis of independence.
+
+This means we found statistically significant evidence of an association between:
+
+whether the team that won the toss wins the match (toss_result_match), and
+
+the decision they make after winning the toss (toss_decision).
