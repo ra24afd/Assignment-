@@ -1,0 +1,36 @@
+Report: Impact of Toss Decisions on IPL Match Outcomes (2008–2017)
+1. Introduction
+The coin toss is considered one of the important factors in IPL cricket and is viewed as an important variable that can affect game strategies and potential outcomes. Sure, some stats, but the narrative on what this means for the game, is, mostly, not a matter of statistics, it’s pitch speculation and hearsay. This investigation investigates if toss-winning teams achieve any quantifiable advantage by being the first ones to bat or to field, using real match data from 2008 to 2017.
+
+1.2 Dataset Description
+The analysis uses the DS258 matches.csv dataset, which contains all IPL matches played between 2008 and 2017. Relevant variables include season, participating teams, toss winner, toss decision (bat or field), and match result. Only matches where a team won the toss were used to examine whether their decision influenced their likelihood of winning.
+
+1.3 Research Question
+Between 2008 and 2017, do toss-winning teams in the IPL achieve different match results depending on whether they choose to bat first or field first?
+This question helps determine whether the toss decision—despite being a random event—contributes meaningfully to match outcomes.
+
+1.4 Hypotheses
+
+•	Null Hypothesis (H₀): There is no difference in the proportion of wins between toss-winning teams choosing to bat and those choosing to field.
+
+•	Alternative Hypothesis (H₁): There is a difference in the proportion of wins between the two decision types.
+
+
+2. Background Research
+The performance of T20 cricket was found to be strongly related to pitch conditions, venue characteristics, and environmental factors in earlier studies. Research by Perera et al. (2013) and also of Bhattacharjee & Saikia (2020) reported the influence of dew, pitch wear, and ground dimensions on tactical decisions. Rana et al. (2021) also concluded that analytics was more commonly used by IPL teams in making toss decisions. These studies provide empirical evidence to investigate whether toss decisions are associated with match outcomes.
+
+
+3. Visualisation
+Win/loss of toss winners who opt for bat vs field was compared using a stacked bar chart and contingency table. The visualisation showed that teams who decided to field first had a slightly higher win percentage than teams that decided to bat. The contingency table gave supporting frequency counts
+
+4. Statistical Analysis
+The Pearson’s Chi-square test was performed to test our hypotheses, since both the toss decision variables and match result variables are categorical. The test result was: 
+
+ χ² = 5.78, df = 1, p = 0.01619. 
+
+Because the p-value is below the 0.05 significance level, the toss decision-match result relationship is statistically significant.
+4.2 Hypothesis Outcome
+As p < 0.05, the null hypothesis is rejected. So, toss-winning teams do not get the same result whether they choose to bat or field. The toss decision exhibits a measurable relationship with match outcome, but does not indicate cause and effect.
+
+5. Conclusion
+The toss decision in IPL cricket from 2008 to 2017 is one that shows a statistically significant relationship, after all, with match results, as this study clearly indicates. Teams who win the toss apparently do marginally better overall when they decide to field. The toss is random, and yet the tactical decision taken pretty soon afterward matters, and that has sparked some of the longest debates about the value of the toss in the IPL.
